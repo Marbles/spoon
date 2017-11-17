@@ -1,13 +1,15 @@
 # Spoon
 
-Spoon is the Laravel template that is used for our projects that don't use [Blender](https://github.com/spatie/blender), which ships with big features like i18n and an admin panel. Spoon is relatively unopinionated, and comes with some utility packages we use in every project.
+This is a Marbles fork of [spatie/spoon](https://github.com/spatie/spoon).
+
+Spoon is the Laravel template that is used for Spatie projects that don't use [Blender](https://github.com/spatie/blender), which ships with big features like i18n and an admin panel. Spoon is relatively unopinionated, and comes with some utility packages we use in every project.
 
 You may use our template but please notice that we offer no support whatsoever. We also don't
 follow semver for this project and won't guarantee that the code (especially the master branch) is stable. In short: when using this, you're on your own.
 
 ## What's in the Box?
 
-Some highlights of what's included here:
+Some highlights of what's included by Spatie here:
 
 - Devtools: debugbar, laravel-mail-preview, laravel-tail, laravel-tinker-tools
 - Database backups
@@ -15,7 +17,10 @@ Some highlights of what's included here:
 - PHP-CS fixer
 - A zero-downtime deploy script with Envoy
 - Our babel setup
-- CSS transpilation with CSSNext
+
+Marbles additions
+
+- TailwindCSS
 
 ## Install
 
