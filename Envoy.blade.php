@@ -78,13 +78,13 @@ composer install --prefer-dist --no-scripts --no-dev -q -o;
 {{ logMessage("📦  Running Yarn...") }}
 cd {{ $newReleaseDir }};
 yarn config set ignore-engines true
-yarn
+yarn --frozen-lockfile
 @endtask
 
 @task('generateAssets', ['on' => 'remote'])
 {{ logMessage("🌅  Generating assets...") }}
 cd {{ $newReleaseDir }};
-yarn run production -- --progress false
+yarn run production --progress false
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
@@ -125,7 +125,7 @@ php artisan config:clear
 php artisan cache:clear
 php artisan config:cache
 
-sudo service php7.1-fpm restart
+sudo service php7.2-fpm restart
 sudo supervisorctl restart all
 @endtask
 
@@ -149,5 +149,5 @@ php artisan config:clear
 php artisan cache:clear
 php artisan config:cache
 sudo supervisorctl restart all
-sudo service php7.1-fpm restart
+sudo service php7.2-fpm restart
 @endtask
