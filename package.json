@@ -1,36 +1,49 @@
 {
-  "name": "spoon",
-  "private": true,
-  "license": "MIT",
-  "authors": [
-    "Sebastian De Deyne <sebastian@spatie.be>",
-    "Freek Van der Herten <freek@spatie.be>",
-    "Willem Van Bockstal <willem@spatie.be>"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:spatie-custom/blender.git"
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.0",
+    "@fortawesome/fontawesome-free-brands": "^5.0.2",
+    "@fortawesome/fontawesome-free-regular": "^5.0.2",
+    "@fortawesome/fontawesome-free-solid": "^5.0.2",
+    "@fortawesome/fontawesome-pro-light": "^5.0.2",
+    "@fortawesome/fontawesome-pro-regular": "^5.0.2",
+    "@fortawesome/fontawesome-pro-solid": "^5.0.2",
+    "@fortawesome/vue-fontawesome": "^0.0.22",
+    "babel-polyfill": "^6.23.0",
+    "eslint-config-prettier": "^2.9.0",
+    "fg-loadcss": "^2.0.1",
+    "lodash": "^4.17.5",
+    "object-fit-images": "^3.2.3",
+    "picturefill": "^3.0.2",
+    "vue": "^2.5.9"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "copy": "^0.3.1",
+    "critical": "^1.1.0",
+    "cross-env": "^5.1.3",
+    "eslint": "^4.15.0",
+    "eslint-config-spatie": "^2.0.3",
+    "eslint-loader": "^1.9.0",
+    "git-rev-sync": "^1.7.1",
+    "html-critical-webpack-plugin": "^1.0.1",
+    "laravel-mix": "^2.0.0",
+    "laravel-mix-purgecss": "^1.0.5",
+    "moment": "^2.14.1",
+    "postcss-object-fit-images": "^1.1.2",
+    "purgecss-webpack-plugin": "^0.20.0",
+    "tailwindcss": "^0.4.1",
+    "webpack": "^3.10.0",
+    "webpack-load-plugins": "^0.1.2"
+  },
+  "eslintConfig": {
+    "extends": "spatie"
   },
   "scripts": {
-    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "format": "prettier --write 'resources/assets/**/*.{css,js,vue}'",
-    "lint": "eslint resources/assets/js --fix --ext js,vue"
-  },
-  "dependencies": {
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
-    "cross-env": "^5.0.1",
-    "eslint": "^4.3.0",
-    "eslint-config-spatie": "^2.0.1",
-    "laravel-mix": "^1.4",
-    "lodash": "^4.17.4",
-    "stylelint": "^8.0.0",
-    "stylelint-config-standard": "^17.0.0",
-    "tailwindcss": "^0.1.6",
-    "vue": "^2.4.0"
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   }
 }
