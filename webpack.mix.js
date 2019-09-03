@@ -106,7 +106,7 @@ mix
         'compact': true,
     })
     .setPublicPath('./public')
-    .js('./resources/assets/js/app.js', './public/js/')
+    .js('./resources/js/app.js', './public/js/')
     .extract(Object.keys(pkg.dependencies))
     .sass('./resources/assets/scss/app.scss', './public/css')
     .autoload({
