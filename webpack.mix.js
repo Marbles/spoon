@@ -9,9 +9,6 @@ require('laravel-mix-purgecss');
 const webpack = require('webpack');
 const moment = require('moment');
 const gitRevSync = require('git-rev-sync');
-const htmlCritical = require('html-critical-webpack-plugin');
-const copy = require('copy');
-
 // package vars
 const pkg = require('./package.json');
 
@@ -83,7 +80,7 @@ mix
         processCssUrls: false, // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
         postCss: [
             require('postcss-object-fit-images'),
-            require('tailwindcss')('./tailwind.js'),
+            require('tailwindcss')('./tailwind.config.js'),
         ],
     })
     .webpackConfig({
